@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('permissions', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('company_id')->nullable()->index('permissions_company_id_foreign');
             $table->string('name');
             $table->string('guard_name');
             $table->timestamps();
